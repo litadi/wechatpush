@@ -12,6 +12,7 @@ public class WechatpushApplication {
     public static void main(String[] args) {
         SpringApplication.run(WechatpushApplication.class, args);
         Pusher.push();
+        return;
     }
 
 }
