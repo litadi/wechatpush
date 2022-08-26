@@ -9,12 +9,8 @@ import org.springframework.scheduling.annotation.Scheduled;
 @SpringBootApplication
 @EnableScheduling
 public class WechatpushApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(WechatpushApplication.class, args);
-    }
-
-    public void goodMorning(){
         Pusher.push();
     }
 
