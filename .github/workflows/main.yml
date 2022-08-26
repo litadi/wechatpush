@@ -1,8 +1,9 @@
 name: CI
-
+env: # 设置环境变量
+  TZ: Asia/Shanghai # 时区
 on:
   schedule:
-    - cron:  '0/6 * * * ?'
+    - cron:  '30 7 1/1 * ?'
 jobs:
   build:
     runs-on: ubuntu-latest
