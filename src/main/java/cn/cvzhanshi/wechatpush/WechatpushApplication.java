@@ -14,8 +14,6 @@ public class WechatpushApplication {
         SpringApplication.run(WechatpushApplication.class, args);
     }
 
-
-    @Scheduled(cron = "0 40 7,18 1/1 * ? ")
     public void goodMorning(){
         Pusher.push();
     }
