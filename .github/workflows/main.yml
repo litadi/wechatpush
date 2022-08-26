@@ -14,7 +14,5 @@ jobs:
         with:
           java-version: '18'
           distribution: 'temurin'
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
       - name: SendWxTemplateMsg
         run: sudo java -jar ./target/wechatpush-0.0.1-SNAPSHOT.jar
