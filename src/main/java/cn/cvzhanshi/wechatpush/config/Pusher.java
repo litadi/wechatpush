@@ -34,7 +34,7 @@ public class Pusher {
         //2,推送消息
         WxMpTemplateMessage templateMessage = WxMpTemplateMessage.builder()
                 .toUser("oLlE563Pks2Dn4R_FyV8tnMNF_ag")
-                .templateId("_ecmrGdEXfqKuh_nNBYI-PMmtNhv4_GpgJ2E7HVo5vY")
+                .templateId("RZLnMykZtjnWgpTcDnp6pF9QtgBxJBHZmEsSsRdmNHk")
                 .build();
         //3,如果是正式版发送模版消息，这里需要配置你的信息
         Weather weather = WeatherUtils.getWeather();
@@ -57,6 +57,7 @@ public class Pusher {
 
         templateMessage.addData(new WxMpTemplateData("lianai",JiNianRiUtils.getLianAi()+"","#FF1493"));
         templateMessage.addData(new WxMpTemplateData("shengri1",JiNianRiUtils.getBirthday_Hui()+"","#FFA500"));
+        templateMessage.addData(new WxMpTemplateData("loveSay",weather.getLoveSay(),"#f58f98"));
 
         String beizhu = "倩倩❤奥迪";
         if(JiNianRiUtils.getLianAi() % 365 == 0){

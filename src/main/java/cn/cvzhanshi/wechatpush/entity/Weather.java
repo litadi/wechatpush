@@ -36,5 +36,5 @@ public class Weather {
 
     String tips;
 
-
+    String loveSay;
 }

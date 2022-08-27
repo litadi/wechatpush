@@ -1,10 +1,13 @@
 package cn.cvzhanshi.wechatpush.config;
 
 import cn.cvzhanshi.wechatpush.entity.Weather;
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
+import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,11 +29,16 @@ public class WeatherUtils {
                 "http://api.tianapi.com/tianqi/index?key=2a188098e8adcdadad4e8dec043191e4&city=桂林市",
                 String.class,
                 map);
+        String loveLanguage = restTemplate.getForObject(
+                "https://api.dzzui.com/api/qinghua?format=json",
+                String.class);
         JSONObject json = JSONObject.parseObject(res);
+        JSONObject loveLanguageJson = JSONObject.parseObject(loveLanguage);
         JSONArray forecasts = json.getJSONArray("newslist");
         List<Weather> weathers = forecasts.toJavaList(Weather.class);
         JSONObject now = forecasts.getJSONObject(0);
         Weather weather = weathers.get(0);
+        weather.setLoveSay(loveLanguageJson.getString("text"));
         weather.setPcpn(now.getString("pcpn"));
         weather.setPop(now.getString("pop"));
         weather.setHumidity(now.getString("humidity"));
