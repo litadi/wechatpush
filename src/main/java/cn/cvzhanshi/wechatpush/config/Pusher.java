@@ -34,7 +34,7 @@ public class Pusher {
         //2,推送消息
         WxMpTemplateMessage templateMessage = WxMpTemplateMessage.builder()
                 .toUser("oLlE563Pks2Dn4R_FyV8tnMNF_ag")
-                .templateId("RZLnMykZtjnWgpTcDnp6pF9QtgBxJBHZmEsSsRdmNHk")
+                .templateId("kYvtGyoaDT59CxM2O8UPY1hp6wgSt-kiLGeDcmEhX04")
                 .build();
         //3,如果是正式版发送模版消息，这里需要配置你的信息
         Weather weather = WeatherUtils.getWeather();
