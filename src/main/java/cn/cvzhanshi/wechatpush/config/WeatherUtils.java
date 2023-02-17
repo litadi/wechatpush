@@ -23,10 +23,10 @@ public class WeatherUtils {
     public static Weather getWeather(){
         RestTemplate restTemplate = new RestTemplate();
         Map<String,String> map = new HashMap<String,String>();
-        map.put("district_id","411000"); // 桂林行政代码
+        map.put("district_id","450300"); // 桂林行政代码
         map.put("data_type","all");//这个是数据类型;
         String res = restTemplate.getForObject(
-                "http://api.tianapi.com/tianqi/index?key=2a188098e8adcdadad4e8dec043191e4&city=许昌市",
+                "http://api.tianapi.com/tianqi/index?key=2a188098e8adcdadad4e8dec043191e4&city=桂林市",
                 String.class,
                 map);
         String loveLanguage = restTemplate.getForObject(
